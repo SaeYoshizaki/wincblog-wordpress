@@ -17,8 +17,9 @@ const categories: Category[] = await response.json();
     <div class="headertext">
       <h1 class="title">WINCBLOG</h1>
       <div class="content_width">
-        <div>
+        <div class="whitebox">
       <h2>WINCブログ</h2>
+        </div>
       <p class="explanation">コンピュータサークル「WINC」の活動記録。</p>
     </div>
     <img src="./LINE_ALBUM_春合宿写真_240229_119 1.png" alt="" class="pixture1">
@@ -114,33 +115,25 @@ body {
   line-height: normal;
   position: absolute;
   top: -50px;
+  left: 5px;
+  z-index: 4;
 }
 
 h1 {
   margin-left: 20px;
 }
 
-h2 {
-  color: #0E3E81;
-  font-family: "Zen Kaku Gothic New";
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  position: absolute;
-  margin-top: 260px;
-  margin-left: 0px;
-}
 
 .explanation {
   color: #000;
-  font-family: "Zen Kaku Gothic New";
+  font-family: "Zen Kurenaido";
   font-size: 30px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin-top: 350px;
   width: 620px;
+  z-index: 10;
 }
 
 a {
@@ -164,6 +157,19 @@ p {
   line-height: normal;
 }
 
+h2 {
+  color: #0E3E81;
+  font-family: "Zen Kurenaido";
+  font-size: 80px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  margin-top: 260px;
+  margin-left: 0px;
+  z-index: 10; /* Ensure this is higher than the images */
+}
+
 .pixture1 {
   position: absolute;
   float: right;
@@ -172,7 +178,7 @@ p {
   width: 100%;
   max-width: 1000px;
   height: auto;
-  z-index: 2;
+  z-index: 2; /* Lower than the h2 */
 }
 
 .pixture2 {
@@ -183,7 +189,9 @@ p {
   overflow: visible;
   width: 100%;
   max-width: 1000px;
+  z-index: 3; /* Lower than the h2 */
 }
+
 
 .number {
   color: rgba(0, 0, 0, 0.60);
