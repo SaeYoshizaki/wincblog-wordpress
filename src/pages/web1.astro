@@ -8,7 +8,7 @@
     </figure>
   </div>
   <script>
-    const carousel = document.querySelector('.carousel figure');
+    const carousel = document.querySelector('.carousel figure') as HTMLElement | null;
     let currentAngle = 0;
     const rotationStep = 72; 
     const totalImages = 5; 
@@ -16,19 +16,21 @@
     document.addEventListener('click', (e) => {
       const viewportWidth = window.innerWidth;
   
-      if (e.clientX < viewportWidth / 2) {
-        // 画面の左半分をクリックしたとき
-        currentAngle += rotationStep; // 左に回転
-      } else {
-        // 画面の右半分をクリックしたとき
-        currentAngle -= rotationStep; // 右に回転
+      if (carousel) { // carouselがnullでないことを確認
+        if (e.clientX < viewportWidth / 2) {
+          // 画面の左半分をクリックしたとき
+          currentAngle += rotationStep; // 左に回転
+        } else {
+          // 画面の右半分をクリックしたとき
+          currentAngle -= rotationStep; // 右に回転
+        }
+  
+        // 回転を適用
+        carousel.style.transform = `rotateY(${currentAngle}deg)`;
       }
-  
-      // 回転を適用し、連続してクリックしても続けて回転するようにする
-      carousel.style.transform = `rotateY(${currentAngle}deg)`;
     });
-  
   </script>
+  
 
   <style>
     .zen-kurenaido-regular {
