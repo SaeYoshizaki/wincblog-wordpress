@@ -1,7 +1,12 @@
 import { defineConfig } from 'astro/config';
-import vercel from '@astrojs/vercel/serverless';
+import react from '@astrojs/react';
+
 // https://astro.build/config
 export default defineConfig({
-  output: 'server',
-  adapter: vercel()
+  integrations: [react()],
+  vite: {
+    ssr: {
+      noExternal: ['microcms-js-sdk'],  // microcms-js-sdkを外部依存として扱わない
+    },
+  },
 });

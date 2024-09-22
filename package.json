@@ -17,8 +17,6 @@
     "@types/react": "^18.3.6",
     "@types/react-dom": "^18.3.0",
     "astro": "^4.15.2",
-    "cookie": "^0.6.0",
-    "cookies": "^0.9.1",
     "microcms-js-sdk": "^3.1.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
