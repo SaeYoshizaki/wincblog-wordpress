@@ -108,7 +108,7 @@ if (categoryId) {
     const content = posts[index].content.rendered.substring(4, 26);
 
     return (
-    <li>{index.toString()}</li> {/* index を直接表示 */}
+    <li>{index.toString()}{/* index を直接表示 */}
         <div class="blog">
           <div class="picture">
             <a href={`./${postIds[index]}`}>
@@ -133,9 +133,6 @@ if (categoryId) {
     );
   })}
 </ul>
-
-
-
       ) : (
         <p>投稿がありません</p>
       )}
