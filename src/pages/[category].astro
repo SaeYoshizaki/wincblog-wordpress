@@ -108,7 +108,7 @@ if (categoryId) {
     const content = posts[index].content.rendered.substring(4, 26);
 
     return (
-      <li key={index.toString()}> {/* index を文字列に変換 */}
+    <li>{index.toString()}</li> {/* index を直接表示 */}
         <div class="blog">
           <div class="picture">
             <a href={`./${postIds[index]}`}>
