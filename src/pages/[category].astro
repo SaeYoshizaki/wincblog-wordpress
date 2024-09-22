@@ -1,5 +1,26 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+import { createClient } from 'microcms-js-sdk';
+
+// クライアントの作成
+const client = createClient({
+  serviceDomain: 'your-service-domain',
+  apiKey: 'your-api-key',
+});
+
+// データの取得関数
+async function fetchData() {
+  try {
+    const response = await client.getList({ endpoint: 'your-endpoint' });
+    console.log(response);
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+// データを取得
+fetchData();
 type Category = {
   id: number;
   name: string;
