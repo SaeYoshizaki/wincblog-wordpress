@@ -3,6 +3,8 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://SaeYoshizaki.github.io',
+  base: '/wincblog-wordpress',
   integrations: [react()],
   vite: {
     ssr: {
