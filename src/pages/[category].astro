@@ -2,13 +2,11 @@
 import Layout from "../layouts/Layout.astro";
 import { createClient } from 'microcms-js-sdk';
 
-// クライアントの作成
 const client = createClient({
   serviceDomain: 'your-service-domain',
   apiKey: 'your-api-key',
 });
 
-// データの取得関数
 async function fetchData() {
   try {
     const response = await client.getList({ endpoint: 'your-endpoint' });
@@ -17,8 +15,6 @@ async function fetchData() {
     console.error(error);
   }
 }
-
-// データを取得
 fetchData();
 type Category = {
   id: number;
@@ -81,7 +77,7 @@ if (categoryId) {
   <main>
     <p class="guide"><a href="http://localhost:4321">home</a> > <a href="http://localhost:4321">blog</a> > <a href={'http://localhost:4321/${categoryId}'}>Web team</a></p>
     <div class="eye-catch">
-      <h1>{categoryName}</h1>
+      <h1>{categoryName} team</h1>
       <div class="carousel">
         <figure>
           <img src="web/picture1.jpg" alt="">
@@ -94,22 +90,19 @@ if (categoryId) {
       <script>
         const carousel = document.querySelector('.carousel figure') as HTMLElement | null;
         let currentAngle = 0;
-        const rotationStep = 72; // 各画像の回転角度 (360度 / 5枚 = 72度)
-        const totalImages = 5; // カルーセルにある画像の枚数
-      
+        const rotationStep = 72; 
+        const totalImages = 5;
+
         if (carousel) {
           document.addEventListener('click', (e) => {
             const viewportWidth = window.innerWidth;
       
             if (e.clientX < viewportWidth / 2) {
-              // 画面の左半分をクリックしたとき
-              currentAngle += rotationStep; // 左に回転
+              currentAngle += rotationStep; 
             } else {
-              // 画面の右半分をクリックしたとき
-              currentAngle -= rotationStep; // 右に回転
+              currentAngle -= rotationStep;
             }
       
-            // 回転を適用し、連続してクリックしても続けて回転するようにする
             carousel.style.transform = `rotateY(${currentAngle}deg)`;
           });
         }
@@ -128,7 +121,7 @@ if (categoryId) {
     const content = posts[index].content.rendered.substring(4, 26);
 
     return (
-    <li>{index.toString()}{/* index を直接表示 */}
+    <li>
         <div class="blog">
           <div class="picture">
             <a href={`./${postIds[index]}`}>
@@ -202,7 +195,7 @@ if (categoryId) {
     width: 100%;
     height: 1px;
     background: #000000;
-    bottom: 0px; /*アンダーラインが現れ始める位置（aタグの下辺からの高さ）*/
+    bottom: 0px; 
     opacity: 0;
     visibility: hidden;
     transition: 0.3s;
@@ -217,22 +210,6 @@ if (categoryId) {
   .eye-catch {
     width: 100%;
     position: relative;
-  }
-
-  .eye-catch::after {
-    content: "Web team";
-    width: 734px;
-    height: 173px;
-    color: rgba(0, 0, 0, 0.15);
-    font-family: "Zen Kaku Gothic New";
-    font-size: 150px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    text-align: left;
-    position: absolute;
-    bottom: -161px;
-    left: 27px;
   }
 
   h1{
@@ -320,7 +297,7 @@ if (categoryId) {
 
   .New_articles {
     position: relative;
-    margin-top: 307px;
+    margin-top: 200px;
     display: flex;
     justify-content: center;
   }

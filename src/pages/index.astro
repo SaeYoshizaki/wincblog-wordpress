@@ -44,9 +44,9 @@ const categories: Category[] = await response.json();
       <h2>WINCブログ</h2>
       <p class="explanation">コンピュータサークル「WINC」の活動記録。</p>
     </div>
-    <img src="./LINE_ALBUM_春合宿写真_240229_119 1.png" alt="" class="pixture1">
+    <img src="./LINE_ALBUM_春合宿写真_240229_119 1.png" alt="" class="picture1">
   </div>
-  <img src="./LINE_ALBUM_春合宿写真_240229_119 2.png" alt="" class="pixture2">
+  <img src="./LINE_ALBUM_春合宿写真_240229_119 2.png" alt="" class="picture2">
  </div>
   <main>
     <div class="category one">
@@ -155,7 +155,7 @@ body {
   font-family: "Zen Kaku Gothic New";
   font-size: 150px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 400;
   line-height: normal;
   position: absolute;
   top: -50px;
@@ -170,7 +170,7 @@ h2 {
   font-family: "Zen Kaku Gothic New";
   font-size: 80px;
   font-style: normal;
-  font-weight: 300;
+  font-weight: 350;
   line-height: normal;
   position: absolute;
   margin-top: 260px;
@@ -216,7 +216,7 @@ p {
   line-height: normal;
 }
 
-.pixture1 {
+.picture1 {
   position: absolute;
   float: right;
   right: 0;
@@ -225,9 +225,10 @@ p {
   max-width: 1000px;
   height: auto;
   z-index: 2;
+  opacity: 0.65;
 }
 
-.pixture2 {
+.picture2 {
   position: relative;
   float: right;
   margin-right: 40px;
@@ -235,6 +236,7 @@ p {
   overflow: visible;
   width: 100%;
   max-width: 1000px;
+  opacity: 0.9;
 }
 
 .number {
@@ -286,37 +288,11 @@ p {
   position: relative;
 }
 
-.one::after {
-  content: "Web team";
-  color: rgba(0, 0, 0, 0.15);
-  font-family: "Zen Kaku Gothic New";
-  font-size: 90px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  position: absolute;
-  bottom: -25px;
-  right: 0px;
-}
-
 .two {
   background-image: url(public/Group 51.png);
   object-fit: cover;
   background-size: 110%;
   position: relative;
-}
-
-.two::after {
-  content: "Application team";
-  color: rgba(0, 0, 0, 0.15);
-  font-family: "Zen Kaku Gothic New";
-  font-size: 90px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  position: absolute;
-  bottom: -25px;
-  right: 0px;
 }
 
 .three {
@@ -326,18 +302,6 @@ p {
   position: relative;
 }
 
-.three::after {
-  content: " Competitive programming team";
-  color: rgba(0, 0, 0, 0.15);
-  font-family: "Zen Kaku Gothic New";
-  font-size: 80px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  position: absolute;
-  bottom: -25px;
-  right: 0px;
-}
 
 .four {
   background-image: url(public/Group 51.png);
@@ -346,18 +310,6 @@ p {
   position: relative;
 }
 
-.four::after {
-  content: "Hackathons works";
-  color: rgba(0, 0, 0, 0.15);
-  font-family: "Zen Kaku Gothic New";
-  font-size: 90px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  position: absolute;
-  bottom: -25px;
-  right: 0px;
-}
 
 .five {
   background-image: url(public/Group 50.png);
@@ -366,18 +318,6 @@ p {
   position: relative;
 }
 
-.five::after {
-  content: "Others";
-  color: rgba(0, 0, 0, 0.15);
-  font-family: "Zen Kaku Gothic New";
-  font-size: 90px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  position: absolute;
-  bottom: -25px;
-  right: 0px;
-}
 
 .team_name {
   color: #0E3E81;
